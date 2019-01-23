@@ -10,9 +10,9 @@ This paper offers a distributed algorithm for computing unbiased coin tossing of
 
 ## Tools
 
-# Oblivious verifiable secret sharing
-# Disjoint committee election
-# Robust multi-source extractor
+### Oblivious verifiable secret sharing
+### Disjoint committee election
+### Robust multi-source extractor
 
 ## Important Definitions
 
