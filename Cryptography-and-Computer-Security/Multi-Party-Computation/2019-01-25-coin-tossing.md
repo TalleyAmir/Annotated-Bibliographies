@@ -6,7 +6,7 @@ Leakage-resilient coin tossing is an important cryptographic tool that allows a 
 
 ## Main Contributions
 
-This paper offers a distributed algorithm for computing unbiased coin tossing of \(m\) fair coins among $n$ parties in $O(1)$ rounds, allowing for a fraction $\lambda$ of each party's local state to be leaked to an adaptive adversary.
+This paper offers a distributed algorithm for computing unbiased coin tossing of \\(m\\) fair coins among $n$ parties in $O(1)$ rounds, allowing for a fraction $\lambda$ of each party's local state to be leaked to an adaptive adversary.
 
 ## Tools
 
