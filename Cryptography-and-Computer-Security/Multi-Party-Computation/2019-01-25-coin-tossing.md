@@ -22,11 +22,31 @@ Secret sharing (SS) is a cryptographic primitive that allows a dealer to generat
 
 The construction itself extends Shamir secret sharing. Two constructions are offered: one weakly leakage-resilient and one strongly leakage-resilient. The weaker version is sufficient to achieve the leakage-resilience properties sought after in the coin tossing scheme, but the stronger version naturally follows and is "of independent interest," according to the authors.
 
+Properties:
+
+ *
+ *
+ *
+
 ### Disjoint committee election
 
-The committee election scheme offered by this paper extends the Feige lightest bin protocol. It is used to ensure that the expected number of corrupted parties in each committee is bounded by a fixed fraction.
+The committee election scheme offered by this paper extends the Feige "lightest bin" protocol. It is used to partition the _n_ parties into _m_ committees such that the size of each committee is within specified limits and the expected number of corrupted parties in each committee is bounded by a fixed fraction.
+
+This partitioning is done by running Feige's lightest bin protocol _n_ times, in series. Each party broadcasts 
+
+Properties:
+
+ * Disjoint committees
+ * Bounded size of committees
+ * Bounded fraction of corrupted parties per committee
 
 ### Robust multi-source extractor
+
+Properties:
+
+ *
+ *
+ *
 
 ## Construction
 
