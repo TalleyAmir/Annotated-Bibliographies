@@ -42,13 +42,26 @@ Properties:
 
 ### Robust multi-source extractor
 
-Properties:
+A robust multi-source extractor is a function that takes input from several independent sources and generates from these inputs a string that is negligibly different from uniformly distributed. In these circumstances, robustness means that even if some of the sources come from corrupted parties, the output string will still appear indistinguishable from uniform so long as the inputs of the corrupted parties are independent of those of the honest parties.
 
- *
- *
- *
+The construction used in this paper was taken from the 2006 work of Kamp, Rao, Vadhan, and Zuckerman.
+
+## Assumptions
+
+ * Communication channels between pairs of parties are secure.
+ * Events are synchronous.
+ * Up to 1/3 of parties may be corrupt.
+ * The adversary is adaptive, computationally unbounded, and can make _leakage queries_, which together imply that the resulting construction is information theoretically secure.
 
 ## Construction
+
+The coin toss is performed in four steps, followed by a single computation performed locally by each of the parties.
+
+ 1. Run the Feige lightest bin protocol to select a primary committee.
+ 2. Run the disjoint committee election protocol to partition the remaining parties into committees.
+ 3. 
+ 4. 
+ 5. 
 
 ## Citation
 
