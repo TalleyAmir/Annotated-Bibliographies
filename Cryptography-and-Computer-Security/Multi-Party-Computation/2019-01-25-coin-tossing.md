@@ -57,11 +57,11 @@ The construction used in this paper was taken from the 2006 work of Kamp, Rao, V
 
 The coin toss is performed in four steps, followed by a single computation performed locally by each of the parties.
 
- 1. Run the Feige lightest bin protocol to select a primary committee.
- 2. Run the disjoint committee election protocol to partition the remaining parties into committees.
- 3. 
- 4. 
- 5. 
+ 1. Run the Feige lightest bin protocol to select a primary committee of size _w_.
+ 2. Run the disjoint committee election protocol to partition the remaining parties into _w_ secondary committees.
+ 3. Each member of the primary committee selects a random value and verifiably secret shares the value to its corresponding secondary committee.
+ 4. Secondary committees reconstruct the random value and each party in the committee broadcasts the value to all other parties. If the dealer was rejcted, 0 is broadcast instead.
+ 5. Locally, each party takes the most common value _r~i_ received from each secondary committee _i_ and computes r = EXT({_r~i_}), where EXT is a robust multi-source extractor.
 
 ## Citation
 
