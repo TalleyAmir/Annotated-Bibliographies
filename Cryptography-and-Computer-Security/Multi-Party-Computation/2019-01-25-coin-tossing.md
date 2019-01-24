@@ -32,7 +32,7 @@ Properties:
 
 The committee election scheme offered by this paper extends the Feige "lightest bin" protocol. It is used to partition the _n_ parties into _m_ committees such that the size of each committee is within specified limits and the expected number of corrupted parties in each committee is bounded by a fixed fraction.
 
-This partitioning is done by running Feige's lightest bin protocol _n_ times, in series. Each party broadcasts 
+This partitioning is done by running Feige's lightest bin protocol _n_ times, in series. In each round, each party broadcasts a random number between 1 and _n/k_ and the parties in the least-value bin are elected to the committee in that round. This is done _m_ times, and for each subsequent round, if a party was previously elected to a committee, they are removed from all subsequent committees to which they are elected.
 
 Properties:
 
