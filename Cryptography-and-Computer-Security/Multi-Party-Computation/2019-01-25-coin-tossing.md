@@ -14,9 +14,16 @@ This paper offers a distributed algorithm for computing unbiased coin tossing of
 
 Secret sharing (SS) is a cryptographic primitive that allows a dealer to generate shares of a secret message and distribute those shares to a group of parties such that the original secret can be constructed if, and only if, some threshold number of shares are pooled together. Verifiable secret sharing (VSS) is a type of SS wherein if the dealer is dishonest, then the honest parties can reject the dealer's shares, or otherwise the dealer is committed to some secret that the honest parties can later reconstruct from their shares.
 
+The construction itself extends Shamir secret sharing. Two constructions are offered: one weakly leakage-resilient and one strongly leakage-resilient. The weaker version is sufficient to achieve the leakage-resilience properties sought after in the coin tossing scheme, but the stronger version naturally follows and is "of independent interest," according to the authors.
+
 ### Disjoint committee election
+
+The committee election scheme offered by this paper extends the Feige lightest bin protocol. It is used to ensure that the expected number of corrupted parties in each committee is bounded by a fixed fraction.
+
 ### Robust multi-source extractor
 
-## Important Definitions
-
 ## Construction
+
+## Citation
+
+Boyle, E., Goldwasser, S., Kalai, Y.T.: Leakage-Resilient Coin Tossing. In: Peleg, D. (ed.) DISC 2011. LNCS, vol. 6950, pp. 181–196. Springer, Heidelberg (2011), [http://eprint.iacr.org/2011/291](http://eprint.iacr.org/2011/291)
