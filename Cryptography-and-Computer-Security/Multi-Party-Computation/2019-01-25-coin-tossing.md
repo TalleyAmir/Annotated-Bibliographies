@@ -61,7 +61,7 @@ The coin toss is performed in four steps, followed by a single computation perfo
  2. Run the disjoint committee election protocol to partition the remaining parties into _w_ secondary committees.
  3. Each member of the primary committee selects a random value and verifiably secret shares the value to its corresponding secondary committee.
  4. Secondary committees reconstruct the random value and each party in the committee broadcasts the value to all other parties. If the dealer was rejcted, 0 is broadcast instead.
- 5. Locally, each party takes the most common value _r~i_ received from each secondary committee _i_ and computes r = EXT({_r~i_}), where EXT is a robust multi-source extractor.
+ 5. Locally, each party takes the most common value _r_ received from each secondary committee and computes _R_ = EXT({_r_}), where EXT is a robust multi-source extractor whose input is the set of all reconstructed _r_. Each party outputs random coin flip _R_.
 
 ## Citation
 
