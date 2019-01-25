@@ -10,7 +10,7 @@ This paper offers a protocol for computing unbiased coin tossing of _m_ fair coi
 
 ## Tools
 
-### Oblivious verifiable secret sharing
+### Weakly leakage-resilient verifiable secret sharing
 
 Secret sharing (SS) is a cryptographic primitive that allows a dealer to generate shares of a secret message and distribute those shares to a group of parties such that the original secret can be constructed if, and only if, some threshold number of shares are pooled together. Verifiable secret sharing (VSS) is a type of SS wherein if the dealer is dishonest, then the honest parties can reject the dealer's shares, or otherwise the dealer is committed to some secret that the honest parties can later reconstruct from their shares.
 
@@ -22,7 +22,9 @@ Properties:
 
 The construction itself extends Shamir secret sharing. Two constructions are offered: one weakly leakage-resilient and one strongly leakage-resilient. The weaker version is sufficient to achieve the leakage-resilience properties sought after in the coin tossing scheme, but the stronger version naturally follows and is "of independent interest," according to the authors.
 
+First, the authors define a modified Shamir secret sharing scheme where, instead of encoding the secret as the constant coefficient, it is split into concatenated segments and encoded as the first _d-t_ coefficients. _d_ is chosen to be larger than _t_ (the number of corrupted parties). _d-t_ coefficients are used (instead of the full _d_) so that shares of the corrupted parties do not yield information about _s_. Reconstruction then works the same as in the original scheme - by interpolating a polynomial of degree _d_ and now instead concatenating the fir _d-t_ coefficients.
 
+This modified scheme is then used to construct the weakly leakage-resilient VSS scheme by applying the same intuition as in Ben-Or, Goldwasser, and Wigderson. Each party receives shares from the dealer and broadcasts linear combinations of their shares. These linear combinations form "codewords" which can be used to verify whether or not the dealer is honest (during the sharing phase). Once verified, each party can use their personal shares to reconstruct the original secret.
 
 ### Disjoint committee election
 
