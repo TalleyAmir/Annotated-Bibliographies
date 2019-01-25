@@ -24,9 +24,9 @@ The construction itself extends Shamir secret sharing. Two constructions are off
 
 Properties:
 
- *
- *
- *
+ * After the sharing phase, the parties can reconstruct a shared message _s'_.
+ * If the dealer is honest, then _s'_ is equal to the original secret _s_.
+ * If the dealer is honest, then the joint view of the corrupted parties' shares is independent of _s_.
 
 ### Disjoint committee election
 
