@@ -20,7 +20,9 @@ RandHound was selected to be used for the purpose of random coin generation beca
 
 ### ByzCoinX
 
-ByzCoinX is closely modelled after ByzCoin's (2016) Byzantine fault-tolerant consensus protocol. The additions made to this protocol by OmniLedger increase the protocol's robustness to denial of service attacks. In addition, it increases performance by resolving transaction conflicts in real time to allow different shards to parallelize computation.
+ByzCoinX is closely modelled after ByzCoin's (2016) Byzantine fault-tolerant consensus protocol. The additions made to this protocol by OmniLedger increase the protocol's robustness to denial of service attacks and increases performance by resolving transaction conflicts in real time to allow for parallel computation.
+
+In order to attain parallelization, OmniLedger implements a data structure that stores block transactions in the nodes of a directed acyclic graph (DAG). The graph is structured such that transactional dependencies are reflected by the directed edges. For the graph to be correct, two invariants must always hold true: (1) The same UTXO cannot be spent in two different transactions concurrently and (2) A UTXO from one transaction's output cannot be input to another transaction until the first transaction has been committed to the ledger. The DAG preserves these two restrictions.
 
 ### Atomix
 
@@ -32,11 +34,13 @@ Atomix is a Byzantine Shard Atomic Commit protocol that enables OmniLedger to pe
 
 ## Throughput Optimizations
 
+### State blocks
+
+For fast bootstrapping new participants.
+
 ### Optional trust-but-verify validation
 
-### Parallelization
-
-### State blocks
+For increased throughput for smaller transactions without sacrificing security of larger transactions.
 
 ## Performance
 
