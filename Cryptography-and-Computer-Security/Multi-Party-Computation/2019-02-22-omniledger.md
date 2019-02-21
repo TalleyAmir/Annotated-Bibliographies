@@ -12,7 +12,11 @@ OmniLedger proposes multiple tools that are then used to build a scalable, decen
 
 ### RandHound
 
-+ cryptographic sortition
+OmniLedger achieves scalability by using a randomized algorithm for selecting a representative committee of transaction block validators. This algorithm is called RandHound, and was proposed in a paper titled "Scalable Bias-Resistant Distributed Randomness" in 2017. RandHound uses the pigeonhole principle to ensure that at least one honest party contributes to the multi-party computation, guaranteeing that the output is necessarily random and cannot be biased. Cryptographic sortition (see Algorand review) is used to select a single validator to play the role of leader and invoke the RandHound algorithm. The output of the coin-toss (with its correctness proof) is then broadcast to all parties and the random bits are used to assign individual parties to shards. 
+
+The security of this shard-assignment algorithm relies on both the security of RandHound and Algorand's cryptographic sortition. Randhound guarantees that the adversary cannot bias the output randomness and cryptographic sortition guarantees that only one leader is elected verifiably. If the leader is corrupted, then the only risk is that the adversary withholds the coin-toss. In this scenario, the protocol times-out after a fixed period, at which point the protocol is re-run from the start. The expected number of times the protocol will need to be re-run until an honest leader is elected is probabilistically bounded.
+
+RandHound was selected to be used for the purpose of random coin generation because it is both scalable and distributed, and has adequate security guarantees. Moreover, it has open-source code and was therefore able to be used for testing OmniLedger's performance in implementation.
 
 ### ByzCoinX
 
