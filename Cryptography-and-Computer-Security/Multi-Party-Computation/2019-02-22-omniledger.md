@@ -22,6 +22,8 @@ RandHound was selected to be used for the purpose of random coin generation beca
 
 ByzCoinX is closely modelled after ByzCoin's (2016) Byzantine fault-tolerant consensus protocol. The additions made to this protocol by OmniLedger increase the protocol's robustness to denial of service attacks and increases performance by resolving transaction conflicts in real time to allow for parallel computation.
 
+The original ByzCoin protocol uses a tree-like structure to communicate, which enables the system to achieve high scalability at the expense of robustness. In particular, if the adversary succeeds in faulting the system, the protocol falls back on an all-to-all communication system. Instead, ByzCoinX uses a two-level tree structure that is created by using the RandHound coin-flip to randomly assign validators within a shard to groups. Within each group, a validator is chosen at random by the protocol leader (from RandHound) to be the liason between the protocol leader and the members of that group. If the group leader is corrupted (does not answer within the timeout period or acts dishonestly), the protocol leader selects another validator to represent that group.
+
 In order to attain parallelization, OmniLedger implements a data structure that stores block transactions in the nodes of a directed acyclic graph (DAG). The graph is structured such that transactional dependencies are reflected by the directed edges. For the graph to be correct, two invariants must always hold true: (1) The same UTXO cannot be spent in two different transactions concurrently and (2) A UTXO from one transaction's output cannot be input to another transaction until the first transaction has been committed to the ledger. The DAG preserves these two restrictions.
 
 ### Atomix
@@ -36,7 +38,9 @@ Atomix is a Byzantine Shard Atomic Commit protocol that enables OmniLedger to pe
 
 ### State blocks
 
-For fast bootstrapping new participants.
+State blocks are used to mitigate the high cost of updating or bootstrapping validators. A state block summarizes the state of a single shard in a given epoch. The state block consists of a Merkle hash of the UTXOs at the end of the given epoch, on which the validators run a consensus protocol. If consensus succeeds, the state block becomes the genesis block of the next epoch. The regular blocks of the prior epoch plus the corresponding state block allow for quick validation. In addition, a skipchain linking structure allows for fast backtracking through time to validate series of transactions.
+
+The computation of the state block itself can take some time (the typical epoch lasts approximately one day) and so in order to improve latency, the next epoch begins with an empty state block. Once the state block for the previous epoch is completed, it is validated, added to the ledger, and given a pointer to the empty placeholder block, as well as the previous epoch's state block. 
 
 ### Optional trust-but-verify validation
 
