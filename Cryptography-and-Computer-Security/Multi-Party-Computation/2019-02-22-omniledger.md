@@ -20,6 +20,8 @@ RandHound was selected to be used for the purpose of random coin generation beca
 
 ### ByzCoinX
 
+ByzCoinX is closely modelled after ByzCoin's (2016) Byzantine fault-tolerant consensus protocol. The additions made to this protocol by OmniLedger increase the protocol's robustness to denial of service attacks. In addition, it increases performance by resolving transaction conflicts in real time to allow different shards to parallelize computation.
+
 ### Atomix
 
 Atomix is a Byzantine Shard Atomic Commit protocol that enables OmniLedger to perform and commit transactions across multiple shards (as is likely the case for most transactions in practice). Furthermore, it prevents double-spending and ensures that unspent currency from failed transactions are not forever locked. It does this using a three-step protocol in the UTXO (Unspent Transaction Output) model that consists of:
