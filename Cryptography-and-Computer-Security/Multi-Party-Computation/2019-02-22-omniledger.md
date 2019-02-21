@@ -10,15 +10,21 @@
 
 ## Tools
 
+### RandHound
+
++ cryptographic sortition
+
 ### ByzCoinX
 
 ### Atomix
 
-## OmniLedger
+## Throughput Optimizations
 
-### Subtitle
+### Optional trust-but-verify validation
 
-### Subtitle
+### Parallelization
+
+### State blocks
 
 ## Performance
 
