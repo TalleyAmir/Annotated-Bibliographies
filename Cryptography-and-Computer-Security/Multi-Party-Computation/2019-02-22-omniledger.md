@@ -22,7 +22,7 @@ RandHound was selected to be used for the purpose of random coin generation beca
 
 ### Atomix
 
-Atomix is a Byzantine Shard Atomic Commit protocol that enables OmniLedger to perform and commit transactions across multiple shards (as is likely the case for most transactions in practice). It does this using a three-step protocol in the UTXO (Unspent Transaction Output) model that consists of:
+Atomix is a Byzantine Shard Atomic Commit protocol that enables OmniLedger to perform and commit transactions across multiple shards (as is likely the case for most transactions in practice). Furthermore, it prevents double-spending and ensures that unspent currency from failed transactions are not forever locked. It does this using a three-step protocol in the UTXO (Unspent Transaction Output) model that consists of:
 
 + Initialize: A client creates a cross-shard transaction by gossiping the request to a subset of "input shards."
 + Lock: For each input shard, the input shard leader verifies the transaction. If successful, the leader commits it to the shard's ledger, issues a proof-of-acceptance, and marks the UTXOs as spent. Otherwise, it issues a proof-of-rejection.
