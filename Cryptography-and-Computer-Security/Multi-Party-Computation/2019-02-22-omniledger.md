@@ -44,7 +44,7 @@ The computation of the state block itself can take some time (the typical epoch 
 
 ### Optional trust-but-verify validation
 
-For increased throughput for smaller transactions without sacrificing security of larger transactions.
+OmniLedger prioritizes security over scalability and is therefore better apt for larger, more expensive transactions. However, in order to accomodate user-needs, OmniLedger offers an optional trust-but-verify validation mechanism which allows smaller transactions to verify as quickly as in real time. "Optimistic validators" perform an initial consensus protocol on a transaction and then "core validators" verify and finalize the transaction. The optimistic validators are smaller groups of validators and are therefore more suceptible to failure; however, such failures are then detected by the core validators, at which point any adversarial parties can be identified and later banned from performing computations. This means that it is not in the adversary's best interest to interefere in computations of small transactions.
 
 ## Performance
 
