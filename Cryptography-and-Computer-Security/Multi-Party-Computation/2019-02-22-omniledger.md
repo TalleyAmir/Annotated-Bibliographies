@@ -2,11 +2,11 @@
 
 ## Relevant Background
 
-...
+Many works prior to OmniLedger aim to build a distributed ledger; however, these prior works exhibit a trade-off between scalability, security, and decentralization.
 
 ## Main Contribution
 
-...
+OmniLedger proposes multiple tools that are then used to build a scalable, decentralized ledger with various security guarantees. Several of these tools build upon previous schemes for secure multi-party computation (RandHound) and byzantine consensus (ByzCoin), while others are novel constructions (Atomix).
 
 ## Tools
 
