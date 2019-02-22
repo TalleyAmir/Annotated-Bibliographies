@@ -48,7 +48,7 @@ OmniLedger prioritizes security over scalability and is therefore better apt for
 
 ## Performance
 
-...
+The trust-but-verify mechanism does indeed increase transaction throughput, and this is exponentially magnified by an increased fraction of adversarial power. Even at up to 25% of validators being corrupted, OmniLedger's performance is on par with Visa's (a centralized transaction system). In addition, OmniLedger achieves its goal of scalability, demonstrating that its throughput increases linearly in the number of shards. Epoch transition latency is mainly because of RandHound, and so perhaps implementing a more time efficient algorithm for leader election would improve the overall time complexity. Client perceived end-to-end latency of transactions scales mostly due to increased shard size, whereas number of shards has a much smaller effect. State blocks dramatically eliminate bandwidth usage (as compared to Bitcoin). Finally, as expected, ByzCoinX's communication pattern performs better than ByzCoin's because the round-trip time from root to leave in the tree pattern is fixed in ByzCoinX's structure.
 
 ## Citation
 
