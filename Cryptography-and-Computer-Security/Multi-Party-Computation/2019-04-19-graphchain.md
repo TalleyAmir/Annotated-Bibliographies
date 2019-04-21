@@ -14,7 +14,7 @@ The Graphchain is built using an incentive mechanism that encourages transaction
 
 ### Transactional Framework
 
-Transactional partially ordered set, or T-POSET; height and weight of a transaction.
+A Graphchain transaction _x_ = <_t_, _p_, _f_, _m_, _s_> consists of a payment (or contract) _t_, an affirmation of at least one parent transaction _p_, a fee _f_, a mint amount _m_, and a puzzle solution _s_. A set of transactions can be represented as a Transactional Partially Ordered Set, or as denoted in this paper, a T-POSET. The _weight_ of a transaction _x_ is the sum of the proof-of-work difficulties of _x_ and all of the descendants of _x_ (every transaction _y_ that whose proof encompasses that of _x_, as well). Similarly, the _height_ of _x_ is the sum of the proof-of-work difficulties of _x_ and all of the ancestors of _x_.
 
 ### Fees and Rewards
 
