@@ -10,6 +10,8 @@ Graphchain is a blockchain-free scalable decentralized ledger that generates blo
 
 ## Tools
 
+The Graphchain is built using an incentive mechanism that encourages transactions to verify a few parent transactions, prioritizing transactions that are more recent and of higher value. The system guarantees _strong convergence_, ensuring that transactions are heavily interwoven and making the graphchain as immutable as blockchain.
+
 ### Transactional Framework
 
 Transactional partially ordered set, or T-POSET; height and weight of a transaction.
