@@ -18,11 +18,11 @@ A Graphchain transaction _x_ = <_t_, _p_, _f_, _m_, _s_> consists of a payment (
 
 ### Fees and Rewards
 
-Incentives for mining are allocated based on the prize of a transaction.
+For each transaction _x_, _f_ must be positive to offset the cost of verification. Implementations can specify a minimum cost, but if they do not, the market drives the cost of these fees. This fee drives the prize of a transaction, which corresponds to the sum of the fees of _x_ and all of its ancestors that have not yet been claimed by miners. This incentivizes verifying newer transactions faster because these transactions have not yet had any of their fees depleted.
 
 ### Depletion Strategy
 
-Draining the reward tactfully to maintain the incentive to mine.
+Graphchain uses a tactful draining strategy to deplete the reward from transactions in such a way that maintains the incentive to mine newer transactions. By redeeming the fees from older transactions first, verifiers are more inclined to verify newer transactions.
 
 ## Security
 
