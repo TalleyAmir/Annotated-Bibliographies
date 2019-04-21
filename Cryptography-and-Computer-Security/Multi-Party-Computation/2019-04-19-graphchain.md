@@ -2,11 +2,11 @@
 
 ## Relevant Background
 
-...
+The primary appeal of digital cryptocurrencies is that they allow us to achieve publicly verifiable and non-repudiable transactions without a centralized authority validating identities and transactions. However, the main mechanism for achieving this kind of decentralization to date has been blockchain. Though blockchain contains the desired properties for implementing cryptocurrencies, the transaction latency is insurmountable. Furthermore, 51% (and fewer) attacks can be used to exploit blockchains due to mining pools.
 
 ## Main Contribution
 
-...
+Graphchain is a blockchain-free scalable decentralized ledger that generates blocks and adds them to the chain via a rational incentive mechanism. The pattern in which blocks are cross-verified results in a directed graph that is long and thin, minimizing transaction latency and preventing submarine attacks.
 
 ## Tools
 
