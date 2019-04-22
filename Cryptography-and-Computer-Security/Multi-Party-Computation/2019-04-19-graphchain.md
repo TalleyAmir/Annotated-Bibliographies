@@ -26,17 +26,15 @@ Graphchain uses a tactful draining strategy to deplete the reward from transacti
 
 ## Security
 
-### Conflicts and Consensus
+Though conflicts are mostly avoided through prompt validation of new transactions, conflicts can still occur if a malicious user tries to double spend a coin, or spend coins with greater value than the user possesses. In the case of transaction conflicts, the Graphchain favors the T-POSET with the tallest well-formed transaction.
 
-Double spending; submarine attack resistence (i.e. convergence); liveness via leading edge preference.
+In order to reverse an honest transaction, an adversary must generate a new transaction whose cumulative proof of work is greater than that of the original transaction. When a transaction is "burried beneath" sufficiently many descendant transactions, this becomes infeasible or unprofitable. Thus the _weight_ of a transaction directly corresponds to its level of security. 
 
-### Minting and Inflation
-
-...
+Graphchain assumes a rational model where the majority of miners act honestly except when acting selfishly benefits them. Further, it assumes that at least half of the miners are uncorrupted. The optimal strategy for creating a new transaction in this graph network under these assumptions is to select parent transactions with no other descendants (this is called the leading edge preference) because these transactions have the highest prize value; if a transaction has no descendants, none of its fees have been collected yet. This property is termed _convergence_. In particular, after a certain amount of time, all transactions verified up until some fixed point in time will share a common descendant. Moreover, _strong convergence_ dictates that for some initial T-POSET _P_, there will eventually be a transaction that is a descendant of all transactions in _P_. This property allows us to claim that submarine attacks are unachievable.
 
 ## Performance
 
-Implementation; runtime; simulator experiments.
+The authors implement skeleton algorithms for this design in Rust and test that it exhibits the correct behavior and expected runtime. The authors observed that even if the parents of transactions are chosen randomly (perhaps subject to constraints? But they do not specify), the graph converges very quickly. In fact, when run a single machine (i7-4770 CPU), Graphchain achieves the same throughput as Bitcoin.
 
 ## Citation
 
