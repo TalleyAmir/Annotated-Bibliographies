@@ -36,6 +36,11 @@ Graphchain assumes a rational model where the majority of miners act honestly ex
 
 The authors implement skeleton algorithms for this design in Rust and test that it exhibits the correct behavior and expected runtime. The authors observed that even if the parents of transactions are chosen randomly (perhaps subject to constraints? But they do not specify), the graph converges very quickly. In fact, when run a single machine (i7-4770 CPU), Graphchain achieves the same throughput as Bitcoin.
 
+<p align="center">
+  <img width="700" src="https://github.com/TalleyAmir/Annotated-Bibliographies/blob/master/Cryptography-and-Computer-Security/Multi-Party-Computation/images/graphchain.png?raw=true"></br>
+  Image taken from Graphchain paper, see citation below.
+</p>
+
 ## Citation
 
 Boyen, Xavier. Carr, Christopher. Haines, Thomas. Graphchain: a Blockchain-Free Scalable Decentralised Ledger. 21-33. 10.1145/3205230.3205235. (2018), [https://dl.acm.org/citation.cfm?id=3205235](https://dl.acm.org/citation.cfm?id=3205235)
