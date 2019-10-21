@@ -9,6 +9,8 @@ James Aspnes, Joffroy Beauquier, Janna Burman, and Devan Sohier. "Time and space
 
 ## Main Contribution
 
+Gives and proves optimality of counting algorithm that uses two states per agent and converges in O(n log(n)) parallel time (i.e. O(n^2 log(n)) interactions).
+
 ## Description of Algorithm
 
 ## Analysis and Future Work
